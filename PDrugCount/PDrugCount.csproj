@@ -6,10 +6,26 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{A7F5140F-95D8-4390-ADD1-D6FCD11C03DD}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>PDrugCount</RootNamespace>
+    <RootNamespace>COS</RootNamespace>
     <AssemblyName>PDrugCount</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -30,8 +46,65 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <StartupObject>PDrugCount.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup>
+    <ApplicationIcon>Icon\7020244134b788cf17ff86c80c02d7d0.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\COS\CSWinFormSingleInstanceApp\bin\Release\FlashControlV71.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageListView">
+      <HintPath>..\..\COS\CSWinFormSingleInstanceApp\bin\Release\ImageListView.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.mshtml, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\COS\CSWinFormSingleInstanceApp\bin\Release\Microsoft.mshtml.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.ConnectionInfo, Version=14.100.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\COS\CSWinFormSingleInstanceApp\bin\Release\Microsoft.SqlServer.ConnectionInfo.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.SqlClrProvider, Version=14.100.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\COS\CSWinFormSingleInstanceApp\bin\Release\Microsoft.SqlServer.SqlClrProvider.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="MongoDB">
+      <HintPath>..\..\COS\CSWinFormSingleInstanceApp\bin\Release\MongoDB.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Bson">
+      <HintPath>..\..\COS\CSWinFormSingleInstanceApp\bin\Release\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver">
+      <HintPath>..\..\COS\CSWinFormSingleInstanceApp\bin\Release\MongoDB.Driver.dll</HintPath>
+    </Reference>
+    <Reference Include="Saraff.Twain">
+      <HintPath>..\..\COS\CSWinFormSingleInstanceApp\bin\Release\Saraff.Twain.dll</HintPath>
+    </Reference>
+    <Reference Include="ShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\COS\CSWinFormSingleInstanceApp\bin\Release\ShockwaveFlashObjects.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.License">
+      <HintPath>..\..\COS\CSWinFormSingleInstanceApp\bin\Release\Spire.License.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.Pdf">
+      <HintPath>..\..\COS\CSWinFormSingleInstanceApp\bin\Release\Spire.Pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\COS\CSWinFormSingleInstanceApp\bin\Release\stdole.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -43,56 +116,87 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="TutUpdater">
+      <HintPath>..\..\COS\CSWinFormSingleInstanceApp\bin\Release\TutUpdater.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class\DBClass.cs" />
     <Compile Include="Class\Encoding.cs" />
-    <Compile Include="fmDEPT.cs">
+    <Compile Include="Class\Entity.cs" />
+    <Compile Include="Form\fmTest.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fmDEPT.Designer.cs">
+    <Compile Include="Form\fmTest.Designer.cs">
+      <DependentUpon>fmTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormScan\fmAddDocument.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormScan\fmAddDocument.designer.cs">
+      <DependentUpon>fmAddDocument.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\fmDEPT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\fmDEPT.Designer.cs">
       <DependentUpon>fmDEPT.cs</DependentUpon>
     </Compile>
-    <Compile Include="fmMain.cs">
+    <Compile Include="Form\fmMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fmMain.Designer.cs">
+    <Compile Include="Form\fmMain.Designer.cs">
       <DependentUpon>fmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="fmSettingConfig.cs">
+    <Compile Include="Form\fmSettingConfig.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fmSettingConfig.designer.cs">
+    <Compile Include="Form\fmSettingConfig.designer.cs">
       <DependentUpon>fmSettingConfig.cs</DependentUpon>
     </Compile>
-    <Compile Include="fmSettingScanner.cs">
+    <Compile Include="FormScan\fmSettingScanner.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fmSettingScanner.designer.cs">
+    <Compile Include="FormScan\fmSettingScanner.designer.cs">
       <DependentUpon>fmSettingScanner.cs</DependentUpon>
     </Compile>
     <Compile Include="Class\IniFileHelper.cs" />
+    <Compile Include="FormScan\SelectSourceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormScan\SelectSourceForm.designer.cs">
+      <DependentUpon>SelectSourceForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Class\SingleInstanceAppHelper.cs" />
     <Compile Include="Class\SingleInstanceAppStarter.cs" />
-    <Compile Include="ward_seq.cs">
+    <Compile Include="Form\ward_seq.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ward_seq.Designer.cs">
+    <Compile Include="Form\ward_seq.Designer.cs">
       <DependentUpon>ward_seq.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="fmDEPT.resx">
+    <EmbeddedResource Include="Form\fmTest.resx">
+      <DependentUpon>fmTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormScan\fmAddDocument.resx">
+      <DependentUpon>fmAddDocument.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\fmDEPT.resx">
       <DependentUpon>fmDEPT.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fmMain.resx">
+    <EmbeddedResource Include="Form\fmMain.resx">
       <DependentUpon>fmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fmSettingConfig.resx">
+    <EmbeddedResource Include="Form\fmSettingConfig.resx">
       <DependentUpon>fmSettingConfig.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fmSettingScanner.resx">
+    <EmbeddedResource Include="FormScan\fmSettingScanner.resx">
       <DependentUpon>fmSettingScanner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormScan\SelectSourceForm.resx">
+      <DependentUpon>SelectSourceForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -102,8 +206,9 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="config.ini" />
+    <None Include="Config\config.ini" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -115,7 +220,29 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\31-512.png" />
+    <None Include="Resources\52945-200.png" />
+    <None Include="Resources\delete.png" />
+    <None Include="Resources\Document128.png" />
+    <None Include="Resources\Editing-Attach-icon.png" />
+    <None Include="Resources\img_570846.png" />
+    <None Include="Resources\print-512.png" />
+    <None Include="Resources\settings.png" />
+    <Content Include="Icon\7020244134b788cf17ff86c80c02d7d0.ico" />
+    <Content Include="SQL\SQLQuery1.sql" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
