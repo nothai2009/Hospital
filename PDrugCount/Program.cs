@@ -15,7 +15,6 @@ namespace PDrugCount
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            // Start the message loop and pass in the main form reference.
             SingleInstanceAppStarter.Start(new fmMain(), StartNewInstance);
         }
 
@@ -24,10 +23,9 @@ namespace PDrugCount
             FormCollection forms = Application.OpenForms;
             if (forms["fmMain"] != null)
             {
+                forms["fmMain"].WindowState = FormWindowState.Maximized;
                 forms["fmMain"].Activate();
             }
-
-           
         }
     }
 }

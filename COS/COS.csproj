@@ -1,0 +1,826 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8EBEBE16-BAD3-476A-806E-D11F17F2C2D2}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>COS</RootNamespace>
+    <AssemblyName>COS</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>\\192.168.0.5\update_program\cos\publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Unc</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ProductName>COS</ProductName>
+    <PublisherName>UDON HOSPITAL</PublisherName>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <AutorunEnabled>true</AutorunEnabled>
+    <DisallowUrlActivation>true</DisallowUrlActivation>
+    <ApplicationRevision>8</ApplicationRevision>
+    <ApplicationVersion>2.0.4.%2a</ApplicationVersion>
+    <UseApplicationTrust>true</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <ExcludeDeploymentUrl>true</ExcludeDeploymentUrl>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>false</BootstrapperEnabled>
+    <BootstrapperComponentsLocation>Relative</BootstrapperComponentsLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\..\..\COS\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\..\..\..\COS\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>CSWinFormSingleInstanceApp.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>ICON\fix32x32.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>0425B7FBC50DE006CAE26CD146232875D010027F</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>COS_1_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportAppServer.Controllers, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="ImageListView">
+      <HintPath>..\..\dll\ImageListView\ImageListViewDemo\bin\Debug\ImageListView.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.ConnectionInfo, Version=14.100.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="MongoDB, Version=0.90.0.1, Culture=neutral, PublicKeyToken=f61bd00ba2535278, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Scanner\Scanner\bin\Debug\MongoDB.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Bson, Version=1.7.0.4714, Culture=neutral, PublicKeyToken=f686731cfb9cc103, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Scanner\Scanner\bin\Debug\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver, Version=1.7.0.4714, Culture=neutral, PublicKeyToken=f686731cfb9cc103, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Scanner\Scanner\bin\Debug\MongoDB.Driver.dll</HintPath>
+    </Reference>
+    <Reference Include="Saraff.Twain, Version=1.0.13.387, Culture=neutral, PublicKeyToken=467d7c56f22cafb6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Scanner\Scanner\bin\Debug\Saraff.Twain.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.Pdf">
+      <HintPath>..\..\Scanner\Scanner\bin\Debug\Spire.Pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.Pdf.Fakes">
+      <HintPath>FakesAssemblies\Spire.Pdf.Fakes.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TutUpdater">
+      <HintPath>..\Update\bin\Debug\TutUpdater.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="fmCompanys.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmCompanys.Designer.cs">
+      <DependentUpon>fmCompanys.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fmDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmDashboard.Designer.cs">
+      <DependentUpon>fmDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fmReceive.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmReceive.Designer.cs">
+      <DependentUpon>fmReceive.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\fmEditJOB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\fmEditJOB.Designer.cs">
+      <DependentUpon>fmEditJOB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\fmAssignmentsBoss.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\fmAssignmentsBoss.Designer.cs">
+      <DependentUpon>fmAssignmentsBoss.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Class\Class_Parameter_Report.cs" />
+    <Compile Include="Class\DBClass.cs" />
+    <Compile Include="Class\Encoding.cs" />
+    <Compile Include="Class\FormatGridView.cs" />
+    <Compile Include="Class\IniFileHelper.cs" />
+    <Compile Include="Class\Entity.cs" />
+    <Compile Include="Form\Manage\fmDOC_TYPE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Manage\fmDOC_TYPE.Designer.cs">
+      <DependentUpon>fmDOC_TYPE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\fmAddDocument.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\fmAddDocument.Designer.cs">
+      <DependentUpon>fmAddDocument.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Setting\fmSettingConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Setting\fmSettingConfig.Designer.cs">
+      <DependentUpon>fmSettingConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Setting\fmSettingScanner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Setting\fmSettingScanner.Designer.cs">
+      <DependentUpon>fmSettingScanner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\fmy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\fmy.Designer.cs">
+      <DependentUpon>fmy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\fmWARRANTY.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\fmWARRANTY.Designer.cs">
+      <DependentUpon>fmWARRANTY.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\frApproveBuyPart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\frApproveBuyPart.Designer.cs">
+      <DependentUpon>frApproveBuyPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Class\printReport.cs" />
+    <Compile Include="Report\RpFixAll.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\RpFixAll.Designer.cs">
+      <DependentUpon>RpFixAll.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\RpRepairDoc.cs">
+      <DependentUpon>RpRepairDoc.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Report\Rpmed.cs">
+      <DependentUpon>Rpmed.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Report\RpWork.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RpWork.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Report\fmReportWork.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\fmReportWork.Designer.cs">
+      <DependentUpon>fmReportWork.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\fmC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\fmC.Designer.cs">
+      <DependentUpon>fmC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\fmUserAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\fmUserAdd.Designer.cs">
+      <DependentUpon>fmUserAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\fmAddPartList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\fmAddPartList.Designer.cs">
+      <DependentUpon>fmAddPartList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\fmDateTimePicker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\fmDateTimePicker.Designer.cs">
+      <DependentUpon>fmDateTimePicker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\fmReportSents.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\fmReportSents.Designer.cs">
+      <DependentUpon>fmReportSents.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\ManagerPartStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\ManagerPartStock.Designer.cs">
+      <DependentUpon>ManagerPartStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\ManagerPartCom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\ManagerPartCom.Designer.cs">
+      <DependentUpon>ManagerPartCom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Rp11.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Rp1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Report\ReportFix.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportFix.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Report\fmReportFix.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\fmReportFix.Designer.cs">
+      <DependentUpon>fmReportFix.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Manage\fmAddDEPT_COS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Manage\fmAddDEPT_COS.Designer.cs">
+      <DependentUpon>fmAddDEPT_COS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\fmAddUserGroups.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\fmAddUserGroups.Designer.cs">
+      <DependentUpon>fmAddUserGroups.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\fmBuyStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\fmBuyStock.Designer.cs">
+      <DependentUpon>fmBuyStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\CR2.cs">
+      <DependentUpon>CR2.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Form\fm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\fm.Designer.cs">
+      <DependentUpon>fm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\fmAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\fmAdmin.Designer.cs">
+      <DependentUpon>fmAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\fmAssignmentsStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\fmAssignmentsStock.Designer.cs">
+      <DependentUpon>fmAssignmentsStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\fmFastJob.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\fmFastJob.Designer.cs">
+      <DependentUpon>fmFastJob.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\fmAddUnit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\fmAddUnit.Designer.cs">
+      <DependentUpon>fmAddUnit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\fmOnProgram.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\fmOnProgram.Designer.cs">
+      <DependentUpon>fmOnProgram.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\fmOnWeb.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\fmOnWeb.Designer.cs">
+      <DependentUpon>fmOnWeb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\fmAdminApproveBuyPart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\fmAdminApproveBuyPart.designer.cs">
+      <DependentUpon>fmAdminApproveBuyPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\fmAdminApproveUsePart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\fmAdminApproveUsePart.designer.cs">
+      <DependentUpon>fmAdminApproveUsePart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\fmAssignmentsWork.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\fmAssignmentsWork.designer.cs">
+      <DependentUpon>fmAssignmentsWork.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\fmDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\fmDetail.designer.cs">
+      <DependentUpon>fmDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\fmGetWork.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\fmGetWork.designer.cs">
+      <DependentUpon>fmGetWork.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\fmGroupSupplies.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\fmGroupSupplies.designer.cs">
+      <DependentUpon>fmGroupSupplies.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\fmHisFixed.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\fmHisFixed.designer.cs">
+      <DependentUpon>fmHisFixed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\fmScore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\fmScore.designer.cs">
+      <DependentUpon>fmScore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\fmSpares.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\fmSpares.designer.cs">
+      <DependentUpon>fmSpares.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Class\GlobleData.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Class\User.cs" />
+    <Compile Include="Report\DataSetReport.cs">
+      <DependentUpon>DataSetReport.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Report\CrystalReport21.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport2.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Report\DataSetReport1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetReport.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Report\fmReport1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\fmReport1.designer.cs">
+      <DependentUpon>fmReport1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\fmReport2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\fmReport2.designer.cs">
+      <DependentUpon>fmReport2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\rtSent.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rtSent.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Report\RpHisFix.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RpHisFix.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Form\SelectSourceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\SelectSourceForm.Designer.cs">
+      <DependentUpon>SelectSourceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UHDATADataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UHDATADataSet.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="fmCompanys.resx">
+      <DependentUpon>fmCompanys.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fmDashboard.resx">
+      <DependentUpon>fmDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fmReceive.resx">
+      <DependentUpon>fmReceive.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\fmEditJOB.resx">
+      <DependentUpon>fmEditJOB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\fmAssignmentsBoss.resx">
+      <DependentUpon>fmAssignmentsBoss.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\fmAddDocument.resx">
+      <DependentUpon>fmAddDocument.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Setting\fmSettingConfig.resx">
+      <DependentUpon>fmSettingConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Setting\fmSettingScanner.resx">
+      <DependentUpon>fmSettingScanner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\fmy.resx">
+      <DependentUpon>fmy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\fmWARRANTY.resx">
+      <DependentUpon>fmWARRANTY.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\frApproveBuyPart.resx">
+      <DependentUpon>frApproveBuyPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\RpFixAll.resx">
+      <DependentUpon>RpFixAll.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\RpRepairDoc.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RpRepairDoc.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Rpmed.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Rpmed.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\RpWork.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RpWork.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\fmReportWork.resx">
+      <DependentUpon>fmReportWork.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\fmC.resx">
+      <DependentUpon>fmC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\fmUserAdd.resx">
+      <DependentUpon>fmUserAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\fmAddPartList.resx">
+      <DependentUpon>fmAddPartList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\fmDateTimePicker.resx">
+      <DependentUpon>fmDateTimePicker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\fmReportSents.resx">
+      <DependentUpon>fmReportSents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\ManagerPartStock.resx">
+      <DependentUpon>ManagerPartStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\ManagerPartCom.resx">
+      <DependentUpon>ManagerPartCom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Rp1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Rp11.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\ReportFix.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReportFix.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\fmReportFix.resx">
+      <DependentUpon>fmReportFix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Manage\fmAddDEPT_COS.resx">
+      <DependentUpon>fmAddDEPT_COS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\fmAddUserGroups.resx">
+      <DependentUpon>fmAddUserGroups.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\fmBuyStock.resx">
+      <DependentUpon>fmBuyStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\CR2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CR2.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\fm.resx">
+      <DependentUpon>fm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\fmAdmin.resx">
+      <DependentUpon>fmAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\fmAssignmentsStock.resx">
+      <DependentUpon>fmAssignmentsStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\fmFastJob.resx">
+      <DependentUpon>fmFastJob.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\fmAddUnit.resx">
+      <DependentUpon>fmAddUnit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\fmOnProgram.resx">
+      <DependentUpon>fmOnProgram.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\fmOnWeb.resx">
+      <DependentUpon>fmOnWeb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\fmAdminApproveBuyPart.resx">
+      <DependentUpon>fmAdminApproveBuyPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\fmAdminApproveUsePart.resx">
+      <DependentUpon>fmAdminApproveUsePart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\fmAssignmentsWork.resx">
+      <DependentUpon>fmAssignmentsWork.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\fmDetail.resx">
+      <DependentUpon>fmDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\fmGetWork.resx">
+      <DependentUpon>fmGetWork.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\fmGroupSupplies.resx">
+      <DependentUpon>fmGroupSupplies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\fmHisFixed.resx">
+      <DependentUpon>fmHisFixed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\fmScore.resx">
+      <DependentUpon>fmScore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\fmSpares.resx">
+      <DependentUpon>fmSpares.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\CrystalReport2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport21.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\fmReport1.resx">
+      <DependentUpon>fmReport1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\fmReport2.resx">
+      <DependentUpon>fmReport2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rtSent.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rtSent.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\RpHisFix.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RpHisFix.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\SelectSourceForm.resx">
+      <DependentUpon>SelectSourceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <Fakes Include="Fakes\Spire.Pdf.fakes" />
+    <Fakes Include="Fakes\CrystalDecisions.Windows.Forms.fakes" />
+    <None Include="ClassDiagram1cd" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Class\SingleInstanceAppHelper.cs" />
+    <Compile Include="Class\SingleInstanceAppStarter.cs" />
+    <None Include="Config\Setting.ini" />
+    <None Include="UHDATADataSet.xsc">
+      <DependentUpon>UHDATADataSet.xsd</DependentUpon>
+    </None>
+    <None Include="UHDATADataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UHDATADataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UHDATADataSet.xss">
+      <DependentUpon>UHDATADataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="SAP.CrystalReports14.NET.2.0">
+      <Visible>False</Visible>
+      <ProductName>SAP Crystal Reports Runtime Engine for .NET Framework</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save_48x48.png" />
+    <None Include="Report\DataSetReport.xsc">
+      <DependentUpon>DataSetReport.xsd</DependentUpon>
+    </None>
+    <None Include="Report\DataSetReport.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetReport1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Report\DataSetReport.xss">
+      <DependentUpon>DataSetReport.xsd</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Resources\sync.ico" />
+    <None Include="Resources\fix32x32R.ico" />
+    <None Include="Resources\fix32x32B.ico" />
+    <None Include="Resources\fix32x32.ico" />
+    <None Include="Resources\boss.ico" />
+    <None Include="Resources\3d bar chart.ico" />
+    <None Include="Resources\User28x28.png" />
+    <None Include="Resources\user.png" />
+    <None Include="Resources\udh.jpg" />
+    <None Include="Resources\new.gif" />
+    <None Include="Resources\Key.bmp" />
+    <None Include="Resources\default.gif" />
+    <None Include="Resources\comment.gif" />
+    <None Include="Resources\Clipboard28x28.png" />
+    <None Include="Resources\BG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ICON\fix32x32.ico" />
+    <Content Include="วิธีการแก้ปัญหา.txt" />
+    <None Include="Resources\delete.png" />
+    <None Include="Resources\52945-200.png" />
+    <None Include="Resources\print-512.png" />
+    <None Include="Resources\settings.png" />
+    <None Include="Resources\31-512.png" />
+    <None Include="Resources\Editing-Attach-icon.png" />
+    <None Include="Resources\img_570846.png" />
+    <None Include="Resources\Document Checklist.png" />
+    <None Include="Resources\Document48.png" />
+    <None Include="Resources\Document128.png" />
+    <None Include="Resources\clipboard.ico" />
+    <None Include="Resources\line.png" />
+    <None Include="Resources\user22.png" />
+    <None Include="Resources\userlo.png" />
+    <None Include="Resources\user1.png" />
+    <None Include="Resources\user2.png" />
+    <None Include="Resources\UserBoss.png" />
+    <None Include="Resources\36.png" />
+    <None Include="Resources\48.png" />
+    <None Include="Resources\28.png" />
+    <None Include="Resources\Log Out_48x48.png" />
+    <None Include="Resources\button_Login_New.png" />
+    <None Include="Resources\Login_New.png" />
+    <None Include="Resources\bg_Login.bmp" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
