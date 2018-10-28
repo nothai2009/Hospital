@@ -1,0 +1,5 @@
+﻿Error 
+-- CrystalDecisions.CrystalReports.Engine
+PM> Install-Package CrystalDecisions.CrystalReports.Engine -Version 1.0.0
+
+ติดตั้ง crytal report CRforVS_13_0_22
