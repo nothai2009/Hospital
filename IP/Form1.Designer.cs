@@ -35,7 +35,7 @@
             // 
             this.lbIP.AutoSize = true;
             this.lbIP.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.lbIP.ForeColor = System.Drawing.Color.Red;
+            this.lbIP.ForeColor = System.Drawing.Color.Black;
             this.lbIP.Location = new System.Drawing.Point(11, 28);
             this.lbIP.Margin = new System.Windows.Forms.Padding(11, 0, 11, 0);
             this.lbIP.Name = "lbIP";
